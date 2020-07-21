@@ -7,6 +7,17 @@
     <groupId>com.evente</groupId>
     <artifactId>kasa_learn_assemble_pro</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>juc</module>
+        <module>nio</module>
+        <module>ds-Algorithm</module>
+        <module>design-mode</module>
+    </modules>
+    <packaging>pom</packaging>
 
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
 </project>
