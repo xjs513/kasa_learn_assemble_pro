@@ -26,7 +26,7 @@ Xmn、Xms、Xmx、Xss都是JVM对内存的配置参数，我们可以根据不�
 
    - **-XX:NewRatio**: 
 
-     设置新生代和老年代的比值。如：为3，表示年轻代与老年代比值为1：3
+     设置新生代和老年代的比值。如：默认为2，表示年轻代与老年代比值为1：2
 
    - **-XX:SurvivorRatio**: 
 
@@ -34,7 +34,7 @@ Xmn、Xms、Xmx、Xss都是JVM对内存的配置参数，我们可以根据不�
 
      注意Survivor区有两个。
 
-     如：为3，表示Eden：Survivor=3：2，一个Survivor区占整个新生代的1/5 
+     如：默认为8，表示Eden：Survivor=8：2，一个Survivor区占整个新生代的1/10
 
    - **-XX:MaxTenuringThreshold**:
 
