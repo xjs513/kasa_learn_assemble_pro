@@ -12,8 +12,10 @@ import java.util.LinkedList;
 public class TestPC2 {
     public static void main(String[] args) {
         SyncContainer container = new SyncContainer();
-        new Productor(container).start();
-        new Consumer(container).start();
+        new Productor(container,"生产者1").start();
+        new Productor(container,"生产者2").start();
+        new Consumer(container, "消费者1").start();
+        new Consumer(container, "消费者2").start();
     }
 }
 
@@ -21,15 +23,16 @@ public class TestPC2 {
 class Productor extends Thread{
     SyncContainer container;
 
-    public Productor(SyncContainer container) {
+    public Productor(SyncContainer container, String name) {
         this.container = container;
+        this.setName(name);
     }
 
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
             container.push(new Chicken(i));
-            System.out.println("生产了[" + i + "]只鸡..");
+            System.out.println("[" + this.getName() + "],生产了[" + i + "]只鸡..");
         }
     }
 }
@@ -37,14 +40,15 @@ class Productor extends Thread{
 class Consumer extends Thread{
     SyncContainer container;
 
-    public Consumer(SyncContainer container) {
+    public Consumer(SyncContainer container,String name) {
+        this.setName(name);
         this.container = container;
     }
 
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
-            System.out.println("消费了[" + container.pop().id + "]只鸡..");
+            System.out.println("[" + this.getName() + "],消费了[" + container.pop().id + "]只鸡..");
         }
     }
 }

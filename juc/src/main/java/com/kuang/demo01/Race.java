@@ -37,7 +37,7 @@ public class Race implements Runnable{
         }
     }
 
-    private static String winner;
+    private String winner;
 
     // 判断比赛是否结束
     private boolean gameOver(int steps){

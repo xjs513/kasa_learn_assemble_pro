@@ -1,10 +1,17 @@
 package com.kuang.state;
 
+import java.util.concurrent.TimeUnit;
+
 public class TestJoin implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
             System.out.println("线程vip来了" + i);
+            try {
+                TimeUnit.MILLISECONDS.sleep(100L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
