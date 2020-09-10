@@ -17,11 +17,11 @@ public class WeddingCompany implements Marry {
         after();
     }
 
-    private void after() {
+    private void before() {
         System.out.println("结婚前，布置现场");
     }
 
-    private void before() {
+    private void after() {
         System.out.println("结婚后，收尾款!!");
     }
 }

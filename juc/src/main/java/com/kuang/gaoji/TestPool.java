@@ -7,33 +7,36 @@ public class TestPool {
         //new Thread(new MyRunnable(), "KKK").start();
 
         // 1. 创建服务
-        ExecutorService executorService = Executors.newFixedThreadPool(30);
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
         //Future<?> future = executorService.submit(new MyRunnable());
         //System.out.println("future = " + future);
-        executorService.execute(new MyRunnable());
-        executorService.execute(new MyRunnable());
-        executorService.execute(new MyRunnable());
-        executorService.execute(new MyRunnable());
+//        executorService.execute(new MyRunnable());
+//        executorService.execute(new MyRunnable());
+//        executorService.execute(new MyRunnable());
+//        executorService.execute(new MyRunnable());
 
+        for (int i = 0; i < 30; i++) {
+            executorService.execute(new MyRunnable());
+        }
 
-        Future<Integer> future = executorService.submit(new MyCallable());
-        System.out.println("future.isDone() = " + future.isDone());
-        if (future.isDone()){
-            try {
-                System.out.println(future.get());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
-        }
-        try {
-            System.out.println(future.get());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+//        Future<Integer> future = executorService.submit(new MyCallable());
+//        System.out.println("future.isDone() = " + future.isDone());
+//        if (future.isDone()){
+//            try {
+//                System.out.println(future.get());
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            } catch (ExecutionException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        try {
+//            System.out.println(future.get());
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        } catch (ExecutionException e) {
+//            e.printStackTrace();
+//        }
         executorService.shutdown();
     }
 }

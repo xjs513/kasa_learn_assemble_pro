@@ -20,7 +20,7 @@ class TrafficLight{
 
     // 南北通行
     synchronized void passCrossNS(int i){
-        if (!canPassNS){
+        while (!canPassNS){
             try {
                 this.wait();
             } catch (InterruptedException e) {
@@ -38,7 +38,7 @@ class TrafficLight{
 
     // 东西通行
     synchronized void passCrossEW(int i){
-        if (canPassNS){
+        while (canPassNS){
             try {
                 this.wait();
             } catch (InterruptedException e) {
