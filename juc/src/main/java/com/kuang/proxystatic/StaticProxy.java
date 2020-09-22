@@ -6,7 +6,9 @@ public class StaticProxy {
         weddingCompany.happyMarry();
 
         // 对比线程的创建方式
-        Thread thread = new Thread(() -> {});
+        Thread thread = new Thread(() -> {
+            System.out.println("create an empty thread.");
+        });
         thread.start();
     }
 }

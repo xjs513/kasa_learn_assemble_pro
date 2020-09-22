@@ -1,7 +1,5 @@
 package com.bilibili.threadlocal;
 
-import java.util.concurrent.TimeUnit;
-
 public class Test_01 {
 
     private String content;
