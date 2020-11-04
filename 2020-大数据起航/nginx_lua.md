@@ -1,5 +1,7 @@
 ##  Nginx [OpenResty]和 Lua 的安装
 
+https://www.bilibili.com/video/BV1Sb41147hP?p=4
+
 操作系统：CentOS 7.5  ```abc```
 
 默认 Nginx 不支持 Lua 模块，需要安装 LuaJIT 解释器，重新编译 Nginx。
