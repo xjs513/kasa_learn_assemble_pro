@@ -19,6 +19,12 @@
     所以该系统为64为Linux系统。
 
 2. file /bin/ls
-    /bin/ls: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.18, stripped
+   /bin/ls: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.18, stripped
 
    可以看到 ELF 64-bit LSB 所以该系统为64位
+
+3. grep
+4. awk
+5. seed
+6. find
+7. netstat
